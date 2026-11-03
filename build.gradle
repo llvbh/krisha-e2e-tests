@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'kz.krisha'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+allure {
+    report {
+        version.set("2.29.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        aspectjVersion.set("1.9.22.1")
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.29.0")
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:7.5.1",
+            "io.qameta.allure:allure-selenide:2.29.0",
+            "org.junit.jupiter:junit-jupiter:5.11.3",
+            "org.slf4j:slf4j-simple:2.0.16"
+    )
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task smoke_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+
+task search_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("search")
+    }
+}
