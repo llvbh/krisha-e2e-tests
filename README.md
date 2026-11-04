@@ -1,12 +1,12 @@
 <a id="readme-top"></a>
-# Тестирование сайта <a href="https://krisha.kz/">krisha.kz</a>
+# Домашнее задание по модулю 4
 
-> Крыша — сайт объявлений о продаже и аренде недвижимости в Казахстане
+> <a href="https://krisha.kz/">Крыша</a> — сайт объявлений о продаже и аренде недвижимости в Казахстане
 
 ## :scroll: Содержание:
 
 - <a href="#tools">Технологии и инструменты</a>
-- <a href="#cases">Тесты</a>
+- <a href="#cases">Реализованные тесты</a>
 - <a href="#console">Запуск тестов из терминала</a>
 - <a href="#jenkins">Сборка в Jenkins</a>
 - <a href="#allure">Allure-отчет</a>
@@ -14,7 +14,7 @@
 - <a href="#video">Видео тестов</a>
 
 <a id="tools"></a>
-## :hammer_and_wrench: Технологии и инструменты
+## :hammer_and_wrench: Использованные инструменты
 
 <p align="center">
 <a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50" alt="Java"/></a>
@@ -41,7 +41,7 @@ Allure-отчет включает в себя:
 - видео выполнения теста
 
 <a id="cases"></a>
-## :ballot_box_with_check: Реализованные проверки
+## :ballot_box_with_check: Реализованные тесты
 
 ### Главная страница
 - Главная страница открывается: заголовок, логотип и форма поиска
