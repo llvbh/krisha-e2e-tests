@@ -13,5 +13,12 @@
     "token": "TELEGRAM_TOKEN",
     "chat": "TELEGRAM_CHAT",
     "replyTo": ""
+  },
+  "proxy": {
+    "type": "socks5",
+    "host": "proxy.qaguru.school",
+    "port": 7777,
+    "username": "",
+    "password": ""
   }
 }
