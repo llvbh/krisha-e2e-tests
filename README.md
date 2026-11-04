@@ -1,5 +1,5 @@
 <a id="readme-top"></a>
-# Тестирования сайта <a href="https://krisha.kz/">krisha.kz</a>
+# Тестирование сайта <a href="https://krisha.kz/">krisha.kz</a>
 
 > Крыша — сайт объявлений о продаже и аренде недвижимости в Казахстане
 
