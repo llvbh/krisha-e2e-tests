@@ -11,6 +11,7 @@
 - <a href="#jenkins">Сборка в Jenkins</a>
 - <a href="#allure">Allure-отчет</a>
 - <a href="#testops">Ручные тест-кейсы в Allure TestOps</a>
+- <a href="#jira">Интеграция с Jira</a>
 - <a href="#telegram">Уведомление в Telegram</a>
 - <a href="#video">Видео тестов</a>
 
@@ -138,6 +139,17 @@ Allure-отчет включает в себя:
 
 <p align="center">
 <img title="Allure TestOps" src="images/screen/testops-manual.png" width="850"/>
+</p>
+
+<p align="right"><a href="#readme-top">наверх</a></p>
+
+<a id="jira"></a>
+## [Интеграция с Jira](https://jira.qa.guru/browse/MUL-69)
+
+В задаче на разработку UI-автотестов привязаны ручные тест-кейсы из <code>Allure TestOps</code>.
+
+<p align="center">
+<img title="Jira" src="images/screen/jira.png" width="850"/>
 </p>
 
 <p align="right"><a href="#readme-top">наверх</a></p>
