@@ -14,7 +14,7 @@
 - <a href="#console">Запуск тестов из терминала</a>
 - <a href="#jenkins">Сборка в Jenkins</a>
 - <a href="#allure">Allure-отчет</a>
-- <a href="#testops">Ручные тест-кейсы в Allure TestOps</a>
+- <a href="#testops">Интеграция с Allure TestOps</a>
 - <a href="#jira">Интеграция с Jira</a>
 - <a href="#telegram">Уведомление в Telegram</a>
 - <a href="#video">Видео тестов</a>
@@ -31,6 +31,8 @@
 <a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50" alt="Selenide"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50" alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework"><img src="images/logo/Allure.svg" width="50" height="50" alt="Allure"/></a>
+<a href="https://qameta.io/"><img src="images/logo/Allure_TO.svg" width="50" height="50" alt="Allure TestOps"/></a>
+<a href="https://www.atlassian.com/software/jira"><img src="images/logo/Jira.svg" width="50" height="50" alt="Jira"/></a>
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50" alt="Jenkins"/></a>
 <a href="https://web.telegram.org/"><img src="images/logo/Telegram.svg" width="50" height="50" alt="Telegram"/></a>
 </p>
@@ -137,12 +139,26 @@ Allure-отчет включает в себя:
 <p align="right"><a href="#readme-top">наверх</a></p>
 
 <a id="testops"></a>
-## [Ручные тест-кейсы в Allure TestOps](https://allure.qa.guru/project/5425/test-cases)
+## <img alt="Allure TestOps" height="25" src="images/logo/Allure_TO.svg" width="25"/> Интеграция с [Allure TestOps](https://allure.qa.guru/project/5425/dashboards)
 
-Проверки, которые нельзя автоматизировать на этом сайте, описаны как ручные тест-кейсы в <code>Allure TestOps</code>.
+Результаты каждой сборки в <code>Jenkins</code> загружаются в <code>Allure TestOps</code>. Проверки, которые нельзя автоматизировать на этом сайте, описаны там же как ручные тест-кейсы.
+
+### Дашборд
 
 <p align="center">
-<img title="Allure TestOps" src="images/screen/testops-manual.png" width="850"/>
+<img title="Allure TestOps Dashboard" src="images/screen/testops-dashboard.png" width="850"/>
+</p>
+
+### Запуск тестов
+
+<p align="center">
+<img title="Allure TestOps Launch" src="images/screen/testops-launch.png" width="850"/>
+</p>
+
+### Автоматизированные и ручные тест-кейсы
+
+<p align="center">
+<img title="Allure TestOps Test Cases" src="images/screen/testops-cases.png" width="850"/>
 </p>
 
 <p align="right"><a href="#readme-top">наверх</a></p>
