@@ -7,6 +7,8 @@ import kz.krisha.pages.components.HeaderComponent;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.title;
 
 public class MainPage {
 
@@ -20,6 +22,12 @@ public class MainPage {
     @Step("Открываем главную страницу")
     public MainPage openPage() {
         open("/");
+        return this;
+    }
+
+    @Step("Проверяем заголовок страницы {value}")
+    public MainPage checkPageTitle(String value) {
+        webdriver().shouldHave(title(value));
         return this;
     }
 

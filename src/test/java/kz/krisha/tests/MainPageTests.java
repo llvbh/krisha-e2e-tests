@@ -12,9 +12,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.codeborne.selenide.Selenide.title;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 @Owner("llvbh")
 @Tag("smoke")
 @DisplayName("Главная страница")
@@ -27,8 +24,8 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Главная страница открывается")
     void mainPageTest() {
-        mainPage.openPage();
-        assertTrue(title().contains("Крыша"));
+        mainPage.openPage()
+                .checkPageTitle("Крыша. Недвижимость в Казахстане — объявления о продаже недвижимости Казахстана");
         mainPage.header.checkLogo();
         mainPage.checkSearchForm();
     }

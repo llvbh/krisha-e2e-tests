@@ -1,4 +1,8 @@
 <a id="readme-top"></a>
+<p align="center">
+<a href="https://krisha.kz/"><img src="images/logo/Krisha.svg" width="300" alt="krisha.kz"/></a>
+</p>
+
 # Проект по тестированию сайта krisha.kz для поиска квартиры
 
 > <a href="https://krisha.kz/">Крыша</a> — сайт объявлений о продаже и аренде недвижимости в Казахстане

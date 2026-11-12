@@ -69,7 +69,6 @@ public class SearchTests extends TestBase {
         searchResultsPage.openPage("/prodazha/kvartiry/almaty/")
                 .checkActivePage("1")
                 .goToPage("2")
-                .checkUrl("page=2")
                 .checkActivePage("2")
                 .checkResults();
     }

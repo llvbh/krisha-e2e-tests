@@ -11,6 +11,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.List;
+
+import static io.qameta.allure.Allure.step;
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Owner("llvbh")
 @Tag("search")
 @DisplayName("Фильтры и сортировка")
@@ -27,8 +32,13 @@ public class FilterTests extends TestBase {
                 .setMaxPrice("30000000")
                 .clickShowResults()
                 .checkUrl("das[price][to]=30000000")
-                .checkResults()
-                .checkAllPricesNotMore(30000000);
+                .checkResults();
+
+        List<Long> prices = searchResultsPage.getPrices();
+        step("Проверяем, что цена объявлений не больше 30000000", () -> {
+            assertThat(prices).isNotEmpty();
+            assertThat(prices).allMatch(price -> price <= 30000000);
+        });
     }
 
     @Test

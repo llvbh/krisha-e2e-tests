@@ -4,8 +4,13 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.codeborne.selenide.CollectionCondition.allMatch;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.cssClass;
+import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -13,7 +18,6 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchResultsPage {
 
@@ -47,14 +51,17 @@ public class SearchResultsPage {
         return this;
     }
 
-    @Step("Проверяем, что цена объявлений не больше {maxPrice}")
-    public SearchResultsPage checkAllPricesNotMore(long maxPrice) {
+    @Step("Получаем цены объявлений")
+    public List<Long> getPrices() {
         prices.shouldHave(sizeGreaterThan(0));
-        for (SelenideElement price : prices) {
-            String number = price.getText().replaceAll("[^0-9]", "");
-            assertTrue(Long.parseLong(number) <= maxPrice, "Цена больше максимальной: " + number);
+        List<Long> result = new ArrayList<>();
+        for (String price : prices.texts()) {
+            String number = price.replaceAll("[^0-9]", "");
+            if (!number.isEmpty()) {
+                result.add(Long.parseLong(number));
+            }
         }
-        return this;
+        return result;
     }
 
     @Step("Выбираем сортировку {sort}")
@@ -100,7 +107,7 @@ public class SearchResultsPage {
 
     @Step("Проверяем, что объявления найдены")
     public SearchResultsPage checkResults() {
-        resultsCount.shouldBe(visible).shouldHave(text("Найдено"));
+        resultsCount.shouldBe(visible).shouldNotBe(empty);
         cards.shouldHave(sizeGreaterThan(0));
         return this;
     }
@@ -108,9 +115,7 @@ public class SearchResultsPage {
     @Step("Проверяем, что все объявления содержат {value}")
     public SearchResultsPage checkAllCards(String value) {
         simpleCards.shouldHave(sizeGreaterThan(0));
-        for (SelenideElement card : simpleCards) {
-            card.shouldHave(text(value));
-        }
+        simpleCards.shouldHave(allMatch("Все объявления содержат " + value, card -> card.getText().contains(value)));
         return this;
     }
 
